@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView nameTextView;
     TextView githubTextView;
     TextView facebookTextView;
     TextView emailTextView;
@@ -31,14 +32,19 @@ public class MainActivity extends AppCompatActivity {
         roundedBitmapDrawable.setCircular(true);
         imageView.setImageDrawable(roundedBitmapDrawable);
 
+        nameTextView = findViewById(R.id.nameTextView);
         githubTextView = findViewById(R.id.githubTextView);
         facebookTextView = findViewById(R.id.facebookTextView);
         emailTextView = findViewById(R.id.emailTextView);
         phoneTextView = findViewById(R.id.phoneTextView);
         shareButton = findViewById(R.id.shareButton);
 
+        String nameText = nameTextView.getText().toString();
         String githubText = githubTextView.getText().toString();
-        final String text = "Github: "+githubText;
+        String facebookText = facebookTextView.getText().toString();
+        String emailText = emailTextView.getText().toString();
+        String phoneText = phoneTextView.getText().toString();
+        final String text = nameText+"\n"+"Github: "+githubText+"\n"+"Facebook: "+facebookText+"\n"+"Email: "+emailText+"\n"+"Teléfono: "+phoneText+"\n";
 
         shareButton.setOnClickListener(new View.OnClickListener(){
             @Override
